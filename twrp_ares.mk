@@ -39,16 +39,17 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # A/B
+ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+# A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := boot system system_ext product vendor
 
 PRODUCT_PACKAGES += \
     update_engine \
+    update_engine_sideload \
     update_verifier
-
-
-$(call inherit-product, \
-    $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
