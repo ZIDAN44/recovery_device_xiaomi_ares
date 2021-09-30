@@ -53,9 +53,10 @@ PRODUCT_PACKAGES += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl.recovery \
     android.hardware.boot@1.1-service \
     android.hardware.boot@1.1-impl \
-    #bootctrl.default
+    bootctrl.mt6893.recovery
 
 # fastbootd
 PRODUCT_PACKAGES += \

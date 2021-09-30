@@ -1,0 +1,28 @@
+cc_library_shared {
+
+    name: "bootctrl.mt6893",
+    vendor: true,
+    recovery_available: true,
+
+    srcs: [
+        "bootctrl.cpp",
+        "avb/libavb/avb_util.c",
+        "avb/libavb/avb_crc32.c",
+    ],
+
+    include_dirs: [
+        "system/core/fs_mgr/include_fstab/fstab",
+        "bootable/recovery/bootloader_message/include",
+    ],
+
+    header_libs: [
+        "libhardware_headers",
+        "libsystem_headers",
+    ],
+    shared_libs: [
+        "liblog",
+        "libbase",
+        "libcutils",
+    ],
+    static_libs: ["libfstab"],
+}
